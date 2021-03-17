@@ -1,15 +1,15 @@
-import React from 'react'
-import { withRouter } from 'react-router-dom'
-import { Container, Segment, Image } from 'semantic-ui-react'
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { Container, Segment, Image } from 'semantic-ui-react';
 
-import theGiant from 'images/The_Giant.jpg'
+import theGiant from 'images/The_Giant.jpg';
 
-const Changelog = () => (
+const Profile = () => (
   <Container>
     <Segment>
-      <Image src={theGiant} size='large' centered style={{ padding: '20px' }} />
+      <Image src={theGiant} size="large" centered style={{ padding: '20px' }} />
     </Segment>
   </Container>
-)
+);
 
-export default withRouter(Changelog)
+export default withRouter(Profile);
