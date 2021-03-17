@@ -13,7 +13,7 @@ describe('ErrorBoundary.jsx', () => {
     render(
       <MemoryRouter>
         <ErrorBoundary>
-          <Container>
+          <Container data-testid="main-container">
             <Profile />
             <Route exact path="/error" component={ErrorPage} />
           </Container>
@@ -51,7 +51,7 @@ describe('ErrorBoundary.jsx', () => {
     const wrapper = () =>
       render(
         <MemoryRouter>
-          <ErrorPage testProps={testProps} />
+          <ErrorPage />
         </MemoryRouter>
       );
     test('renders to the DOM', () => {
