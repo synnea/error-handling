@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Accordion, Icon } from 'semantic-ui-react';
 import { withRouter, useHistory } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 
 import './ErrorPage.css';
 
@@ -48,7 +49,9 @@ const ErrorPage = (props) => {
             We're experiencing an internal error. Please try again later or
             contact us!
           </p>
-          <a onClick={{ goBack }}>Go Back</a>
+          <Button className="error-button" onClick={goBack}>
+            <i class="backward icon"></i>Go Back
+          </Button>
           <div className="error-info-box">{errorInfo}</div>
         </div>
       </div>

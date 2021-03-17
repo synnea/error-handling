@@ -71,7 +71,25 @@ We would like to provide our users with an experience similar to these pages:
 
 ## Discussion
 
+# Summary
+
+This PR implements error catching within the app's main content via the use of a custom error boundary component. The error boundary redirects to a custom 500 error page.
+
+Existing code has not been modified, except for a fix of incorrect function names and exports.
+
+Testing coverage is provided.
+
+The error handling sends error information to the backend via the reportError function in the ServerAPI class. The type error, error stack, and date of occurrence are all relayed.
+
+As it was not stated in which format the database stores the current time, I chose a simple Date object. Specific formats can be implemented if desired, let me know!
+
+# Suggestion for the Backend
+
+I would suggest building a function that extracts the place in which the error occured from the error stack object to pinpoint potentially problematic areas within the code.
+
+# Feedback on the Challenge
+
 The instructions were precise and easy to follow (I can tell from comparison that you're doing very well here :D).
-I chose not to let the user go back to the page they visited before the error with the back button. 'Go back' is prominently displayed, so the user can choose to try again by hitting the back button.
-Looking up online, it seems not to be suggested to mess with the back button's functionality. I believe my solution is user-friendly.
-Here are my suggestions for the backend
+In my implementation, the 'go back' link takes the user back to the page before the error occurred. The back button has default behavior.
+
+Thanks!

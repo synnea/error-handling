@@ -84,6 +84,10 @@
   position: absolute;
 }
 
+.error-button {
+  background-color: indianred !important;
+}
+
 @media only screen and (max-width: 767px) {
   .error .error-image {
     width: 110px;
