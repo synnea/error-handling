@@ -2,8 +2,8 @@
 
 We are excited to be taking the next steps with you as a candidate! Our team has prepared a straight forward code challenge for you to complete. We value your time, and while you are free to spend as much time on the challenge as you wish, we have designed this to be completed _within two hours_.
 
-
 ---
+
 ## Overview
 
 Provided is a simplified version of an old OSPIN React application. The application features a sidebar which uses React Router to navigate, and is complete with several views and a whole bunch of classic 20th century art. Also provided is a minimal testing set up, which should be all green when starting out.
@@ -11,6 +11,7 @@ Provided is a simplified version of an old OSPIN React application. The applicat
 As we expect to rapidly grow this application within the mean extreme programming machine that the OSPIN webdev team is, we want to make sure we have some sort of graceful error handling page for our clients when we goof up. After all, when you are in the middle of growing a new liver with a bioprocessing device controlled by a web app, you can't just have a blank screen show up if you encounter an error!
 
 We would like to provide our users with an experience similar to these pages:
+
 <div align="center">
   <img src="gitlab_500.png" style="width: 50%">
 </div>
@@ -20,12 +21,16 @@ We would like to provide our users with an experience similar to these pages:
 </div>
 
 ---
+
 ## Getting Started
+
 - Please clone the repository - **do not fork!** This is to ensure your submission stays private. If you will be hosting the repo on Github or Gitlab (not mandetory, see FAQ), please rename the repository.
 - Please run `npm i && npm test` followed by `npm start` to make sure everything is working as expected!
 
 ---
+
 ## Deliverables
+
 - **When an uncaught error is thrown within any `render` function of a component:**
   - the sidebar should still be visible, and only the 'main-content' should be replaced with the error view
   - the url should reflect that a user is on the new error page
@@ -37,8 +42,8 @@ We would like to provide our users with an experience similar to these pages:
   - **bonus:** provide the user with the option to see the actual error and the stack trace on the error page
   - **bonus:** provide additional thoughts in this README (space provided below) of how the dev team could best make use of the errors that are being reported to the backend!
 
-
 ---
+
 ## FAQ
 
 **Q**: What do I do once I am finished?
@@ -59,16 +64,14 @@ We would like to provide our users with an experience similar to these pages:
 **Q:** How much test coverage do I need to provide?
 **A:** Use your best judgement depending on your time constraints. If it is a choice between 20 tests which cover 50% of the feature, vs. 5 tests which cover 95% of the feature, go for the higher coverage!
 
-
 **Q:** What if I have additional questions about the feature/user experience?
 **A:** First and foremost, if it is not blocking to your completion of the code challenge, feel free to list any assumptions you need to make in the discussion section of the README below. Otherwise, reach out directly if you have any questions that feel are blocking to the completion of this code challenge.
 
 ---
+
 ## Discussion
-> This is your space to communicate your thoughts as a developer to us. Use this section to describe the decisions you made (architecturally, technically, etc.), as well as any recommendations for alterations/extensions to the feature. Consider what makes a for a stellar PR body and provide it here.
 
-> If there are any assumptions you had to make because of ambiguity in the feature request, please list them here!
-
-> If your implementation involves additional setup to run, please let us know here.
-
-> Any and all feedback on the code challenge is greatly appreciated. Please let us know if it could be improved, if it was too long, if expectations weren't clear, etc.!
+The instructions were precise and easy to follow (I can tell from comparison that you're doing very well here :D).
+I chose not to let the user go back to the page they visited before the error with the back button. 'Go back' is prominently displayed, so the user can choose to try again by hitting the back button.
+Looking up online, it seems not to be suggested to mess with the back button's functionality. I believe my solution is user-friendly.
+Here are my suggestions for the backend
