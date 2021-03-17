@@ -12,13 +12,15 @@ const ErrorPage = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   let history = useHistory();
-  const goBack = () => {
-    history.go(-2);
-  };
 
   let prevLocation = props.history.location.state || props.sampleProp;
 
   let errorInfo = null;
+
+  const goBack = () => {
+    if (prevLocation) history.go(-2);
+    else history.push('/devices');
+  };
 
   const isOpenHandler = () => {
     setIsOpen(!isOpen);
