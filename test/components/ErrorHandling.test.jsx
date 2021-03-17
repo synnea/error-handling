@@ -64,15 +64,26 @@ describe('ErrorBoundary.jsx', () => {
     });
   });
   describe('the error page', () => {
+    const sampleProp = {
+      state: {
+        errorInfo: 'some error',
+        prevLocation: 'test',
+      },
+    };
+
     const wrapper = () =>
       render(
         <MemoryRouter>
-          <ErrorPage />
+          <ErrorPage sampleProp={sampleProp} />
         </MemoryRouter>
       );
     test('renders to the DOM', () => {
       const { getByTestId } = wrapper();
       getByTestId('error-container');
+    });
+    test('error can be inspected', () => {
+      const { getByTestId } = wrapper();
+      getByTestId('error-inspection-container');
     });
   });
 });

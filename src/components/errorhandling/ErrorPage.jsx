@@ -15,7 +15,9 @@ const ErrorPage = (props) => {
     history.go(-2);
   };
 
-  const prevLocation = props.history.location.state;
+  let prevLocation = props.history.location.state || props.sampleProp;
+
+  console.log('here' + prevLocation);
 
   let errorInfo = null;
 
@@ -25,7 +27,7 @@ const ErrorPage = (props) => {
 
   if (prevLocation) {
     errorInfo = (
-      <Accordion>
+      <Accordion data-testid="error-inspection-container">
         <Accordion.Title active onClick={isOpenHandler}>
           <Icon name="dropdown" />
           Inspect the error
