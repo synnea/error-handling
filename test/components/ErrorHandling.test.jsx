@@ -14,7 +14,6 @@ describe('ErrorBoundary.jsx', () => {
       <MemoryRouter>
         <ErrorBoundary>
           <Container data-testid="main-container">
-            <Profile />
             <Route exact path="/error" component={ErrorPage} />
           </Container>
         </ErrorBoundary>
@@ -29,6 +28,19 @@ describe('ErrorBoundary.jsx', () => {
   });
 
   describe('error thrown', () => {
+    const { reload } = window.location;
+
+    beforeAll(() => {
+      Object.defineProperty(window.location, 'reload', {
+        configurable: true,
+      });
+      window.location.reload = jest.fn();
+    });
+
+    afterAll(() => {
+      window.location.reload = reload;
+    });
+
     const ComponentWithError = () => {
       throw new Error('woops!');
     };
