@@ -27,9 +27,25 @@ class ErrorBoundary extends Component {
     });
   }
 
+  navigateToErrorRoute = () => {
+    if (!this.state.isNavigationAway) {
+      return (
+        this.props.history.push({
+          pathname: '/error',
+          state: {
+            errorInfo: this.state.errorInfo,
+            prevLocation: this.props.location.pathname,
+          },
+        }),
+        window.location.reload(),
+        this.setState({ isNavigationAway: true })
+      );
+    }
+  };
+
   render() {
     if (this.state.hasError) {
-      return <h1>Houston, we have a problem</h1>;
+      this.navigateToErrorRoute();
     } else {
       return this.props.children;
     }
