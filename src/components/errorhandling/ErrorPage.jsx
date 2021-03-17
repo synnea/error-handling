@@ -17,8 +17,6 @@ const ErrorPage = (props) => {
 
   let prevLocation = props.history.location.state || props.sampleProp;
 
-  console.log('here' + prevLocation);
-
   let errorInfo = null;
 
   const isOpenHandler = () => {

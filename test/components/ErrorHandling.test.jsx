@@ -1,12 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { Container } from 'semantic-ui-react';
 import { Route } from 'react-router-dom';
 import { MemoryRouter } from 'react-router';
 
 import ErrorBoundary from 'components/errorhandling/ErrorBoundary';
 import ErrorPage from 'components/errorhandling/ErrorPage';
-import Profile from 'components/profile/Profile';
 
 describe('ErrorBoundary.jsx', () => {
   const renderErrorBoundaryComponent = () =>
@@ -65,10 +64,8 @@ describe('ErrorBoundary.jsx', () => {
   });
   describe('the error page', () => {
     const sampleProp = {
-      state: {
-        errorInfo: 'some error',
-        prevLocation: 'test',
-      },
+      errorInfo: 'some error',
+      prevLocation: 'test',
     };
 
     const wrapper = () =>
@@ -84,6 +81,12 @@ describe('ErrorBoundary.jsx', () => {
     test('error can be inspected', () => {
       const { getByTestId } = wrapper();
       getByTestId('error-inspection-container');
+    });
+    test('clicking on the link opens up the error stack', () => {
+      const { getByText } = wrapper();
+      const link = getByText('Inspect the error');
+      fireEvent.click(link);
+      getByText('some error');
     });
   });
 });
