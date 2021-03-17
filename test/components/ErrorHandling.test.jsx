@@ -45,7 +45,11 @@ describe('ErrorBoundary.jsx', () => {
         </MemoryRouter>
       );
 
-    test('leads to redirection to error page', () => {});
+    test('leads to redirection to error page', () => {
+      expect(jest.isMockFunction(window.location.reload)).toBe(true);
+      renderComponentWithError();
+      expect(window.location.reload).toHaveBeenCalled();
+    });
   });
   describe('the error page', () => {
     const wrapper = () =>

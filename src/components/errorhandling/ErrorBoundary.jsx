@@ -46,6 +46,7 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       this.navigateToErrorRoute();
+      return null;
     } else {
       return this.props.children;
     }
