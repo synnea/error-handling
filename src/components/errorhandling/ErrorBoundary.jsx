@@ -9,26 +9,27 @@ class ErrorBoundary extends Component {
   state = {
     hasError: false,
     errorInfo: '',
-    isNavigationAway: false,
+    isNavigatingAway: false,
   };
 
   static getDerivedStateFromError(error) {
     return {
       hasError: true,
+      errorInfo: error.stack.toString(),
     };
   }
 
   componentDidCatch(error, errorInfo) {
-    // ServerAPI.reportError({
-    //   errorName: error,
-    //   stackTrace: errorInfo,
-    //   creationTime: Date.now(),
-    // });
+    ServerAPI.reportError({
+      errorName: error,
+      stackTrace: errorInfo,
+      creationTime: Date.now(),
+    });
   }
 
   render() {
     if (this.state.hasError) {
-      return null;
+      return <h1>Houston, we have a problem</h1>;
     } else {
       return this.props.children;
     }

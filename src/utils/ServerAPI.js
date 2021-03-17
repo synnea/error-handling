@@ -1,7 +1,7 @@
 class ServerAPI {
-
   static reportError({ errorName, stackTrace, creationTime }) {
-    console.log({ errorName, stackTrace, creationTime })
+    console.log({ errorName, stackTrace, creationTime });
   }
-
 }
+
+export default ServerAPI;

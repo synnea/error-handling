@@ -7,6 +7,7 @@ import theGiant from 'images/The_Giant.jpg';
 const Profile = () => (
   <Container>
     <Segment>
+      {null.map((value) => value)}
       <Image src={theGiant} size="large" centered style={{ padding: '20px' }} />
     </Segment>
   </Container>
