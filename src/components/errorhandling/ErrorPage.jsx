@@ -50,7 +50,7 @@ const ErrorPage = (props) => {
             contact us!
           </p>
           <Button className="error-button" onClick={goBack}>
-            <i class="backward icon"></i>Go Back
+            <i className="backward icon"></i>Go Back
           </Button>
           <div className="error-info-box">{errorInfo}</div>
         </div>
