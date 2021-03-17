@@ -48,10 +48,8 @@ describe('ErrorBoundary.jsx', () => {
       render(
         <MemoryRouter>
           <ErrorBoundary>
-            <Container>
-              <ComponentWithError />
-              <Route exact path="/error" component={ErrorPage} />
-            </Container>
+            <ComponentWithError />
+            <Route exact path="/error" component={ErrorPage} />
           </ErrorBoundary>
         </MemoryRouter>
       );
@@ -62,6 +60,9 @@ describe('ErrorBoundary.jsx', () => {
       expect(window.location.reload).toHaveBeenCalled();
     });
   });
+});
+
+describe('ErrorPage.jsx', () => {
   describe('the error page', () => {
     const sampleProp = {
       errorInfo: 'some error',
